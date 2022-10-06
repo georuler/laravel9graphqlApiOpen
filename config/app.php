@@ -176,10 +176,16 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\TelescopeServiceProvider::class,
 
         Jenssegers\Mongodb\MongodbServiceProvider::class,
 
         \Georuler\Sabangnet\SabangNetServiceProvider::class,
+
+        Asvae\ApiTester\ServiceProvider::class,
+        Recca0120\Terminal\TerminalServiceProvider::class,
+
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class
     ],
 
     /*

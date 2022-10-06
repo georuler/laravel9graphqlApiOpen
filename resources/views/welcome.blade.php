@@ -36,7 +36,7 @@
 
         <script>
             let date = new Date();
-            console.log(dateFns.format(new Date(), 'yyyy-MM-dd'));
+            //console.log(dateFns.format(new Date(), 'yyyy-MM-dd'));
             //console.log(dateFns.format(new Date(2014, 6, 2, 15), "h 'o''clock'"));
             /* jquery("#login").click(function() {
                 console.log

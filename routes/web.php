@@ -17,7 +17,18 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    /* JavaScript::put([
+        'foo' => 'bar',
+        'user' => User::first(),
+        'age' => 29
+    ]);
+    
+    return view('welcome'); */
+
+    $sql = DB::table('users')->paginate(10);
+
+    dd($sql->count());
 });
 
 
