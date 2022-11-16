@@ -19,7 +19,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        JavaScript::put([
+            'foo' => 'bar',
+            'user' => User::first(),
+            'age' => 29
+        ]);
+    
+        return view('welcome');
     }
 
     /**

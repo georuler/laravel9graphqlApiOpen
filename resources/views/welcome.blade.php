@@ -41,6 +41,12 @@
             /* jquery("#login").click(function() {
                 console.log
             }); */
+            
+            console.log(window);
+
+            /* 
+             */
+
         </script>
 
         {{-- <script type="text/javascript">

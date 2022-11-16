@@ -17,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
             $this->app->register(TelescopeServiceProvider::class);
         }
+
+        if ($this->app->runningInConsole()) {
+            $this->app->register('CrestApps\CodeGenerator\CodeGeneratorServiceProvider');
+        }
     }
 
     /**

@@ -1,0 +1,7 @@
+[
+    {
+        "model-name": "Admin",
+        "resource-file": "admins.json",
+        "table-name": "admins"
+    }
+]

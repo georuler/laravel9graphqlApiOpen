@@ -201,6 +201,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // ...
+        'JavaScript' => Laracasts\Utilities\JavaScript\JavaScriptFacade::class
     ])->toArray(),
 
 ];

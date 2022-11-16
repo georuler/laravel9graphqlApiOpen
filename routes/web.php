@@ -1,10 +1,11 @@
 <?php
 
 use App\Models\User;
+use App\Libries\Test;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
-
+use App\Http\Controllers\AdminsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,11 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
+Route::get('/zz', [\App\Http\Controllers\UserController::class, 'index']);
+
 Route::get('/', function () {
+
+
 
     /* JavaScript::put([
         'foo' => 'bar',
@@ -26,9 +31,18 @@ Route::get('/', function () {
     
     return view('welcome'); */
 
-    $sql = DB::table('users')->paginate(10);
+    /* $sql = DB::table('users')->paginate(10);
 
-    dd($sql->count());
+    dd($sql->count()); */
+
+    //dd(phpinfo());
+
+    /* $test = new Test();
+
+    dump($test);
+
+    //dump($test->aa());
+    dump($test->aa()->bb()); */
 });
 
 
@@ -89,4 +103,36 @@ Route::get('/test', function () {
         ],
     ]);
     dd($pdo); */
+
+    handle(
+        path: '/path/to/image.jpg',
+        height: 500,
+        width: 300
+    );
+});
+
+function handle(string $path, int $height, int $width): void
+{
+
+    // logic for handling image processing
+
+}
+
+Route::group([
+    'prefix' => 'admins',
+], function () {
+    Route::get('/', [AdminsController::class, 'index'])
+         ->name('admins.admin.index');
+    Route::get('/create', [AdminsController::class, 'create'])
+         ->name('admins.admin.create');
+    Route::get('/show/{admin}',[AdminsController::class, 'show'])
+         ->name('admins.admin.show');
+    Route::get('/{admin}/edit',[AdminsController::class, 'edit'])
+         ->name('admins.admin.edit');
+    Route::post('/', [AdminsController::class, 'store'])
+         ->name('admins.admin.store');
+    Route::put('admin/{admin}', [AdminsController::class, 'update'])
+         ->name('admins.admin.update');
+    Route::delete('/admin/{admin}',[AdminsController::class, 'destroy'])
+         ->name('admins.admin.destroy');
 });
